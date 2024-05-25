@@ -21,7 +21,9 @@ namespace CustomGrabbableMod
 		bool inRoom;
 		public static Plugin instance;
         public static AssetBundle bundle;
-		public static GameObject assetBundleParent;
+        public static GameObject assetBundleParent;
+        public static string assetBundleName = "PUT FILE NAME HERE";
+        public static string parentName = "BundleParent (put objects in here DONT MOVE)";
 
         void Start()
 		{
@@ -44,10 +46,10 @@ namespace CustomGrabbableMod
 			instance = this;
 
 			//This loads the asset bundle put in the AssetBundles folder
-			bundle = LoadAssetBundle("GorillaTagAssetBundleModTemplate.AssetBundles.ASSET BUNDLE NAME HERE");
+			bundle = LoadAssetBundle("GorillaTagAssetBundleModTemplate.AssetBundles." + assetBundleName);
 
             //Spawn in Parent
-            assetBundleParent = Instantiate(bundle.LoadAsset<GameObject>("BundleParent (put objects in here DONT MOVE)"));
+            assetBundleParent = Instantiate(bundle.LoadAsset<GameObject>(parentName));
 
             //Set Parent Pos (DO NOT CHANGE)
             assetBundleParent.transform.position = new Vector3(-67.2225f, 11.57f, -82.611f);
