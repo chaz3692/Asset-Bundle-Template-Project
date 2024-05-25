@@ -6,6 +6,5 @@
 - Some C# coding experience
 - Some Unity Experience
 
- # Tutorial
- Use the text below or follow the Tutorial Video (coming soon)
+ # [Tutorial Link](https://youtu.be/nf2LdZUykzk)
 
