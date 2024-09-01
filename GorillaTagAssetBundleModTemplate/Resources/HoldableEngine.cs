@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using GorillaLocomotion;
-using CustomGrabbableMod;
+using AssetBundleTemplate;
 
 namespace DevHoldableEngine
 {
@@ -10,15 +10,10 @@ namespace DevHoldableEngine
         public bool InLeftHand;
         public bool PickUp;
         public Rigidbody Rigidbody;
-        public AudioSource audioSource;
-        public AudioClip grabSound;
-        public AudioClip throwSound;
         public Collider boxColl;
 
         public float Distance = 0.2f;
         public float ThrowForce = 3f;
-        private const float velocityForSplat = 10f;
-        public bool isCat;
 
         public virtual void OnGrab(bool isLeft)
         {
@@ -31,10 +26,6 @@ namespace DevHoldableEngine
             {
                 boxColl = gameObject.GetComponent<BoxCollider>();
             }
-            audioSource.pitch = 1;
-            audioSource.clip = grabSound;
-            audioSource.PlayOneShot(audioSource.clip);
-
         }
 
         public virtual void OnDrop(bool isLeft)
@@ -51,9 +42,6 @@ namespace DevHoldableEngine
                     Rigidbody.angularVelocity = gorillaVelocityEstimator.angularVelocity;
                 }
             }
-            audioSource.pitch = 1;
-            audioSource.clip = throwSound;
-            audioSource.PlayOneShot(audioSource.clip);
         }
         public void Update()
         {

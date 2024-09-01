@@ -1,17 +1,11 @@
 ﻿using System;
-using System.EnterpriseServices.Internal;
 using System.IO;
 using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
 using BepInEx;
-using DevHoldableEngine;
-using GorillaLocomotion.Swimming;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Utilla;
 
-namespace CustomGrabbableMod
+namespace AssetBundleTemplate
 {
 	[ModdedGamemode]
 	[BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
@@ -27,7 +21,6 @@ namespace CustomGrabbableMod
 
         void Start()
 		{
-
 			Utilla.Events.GameInitialized += OnGameInitialized;
 		}
 
